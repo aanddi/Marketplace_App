@@ -5,12 +5,14 @@
       </v-row>
    </v-container>
 </template>
+ 
 <script>
 export default {
-   data() {
+   name: 'RegistrationView',
+   date() {
       return {
+
       }
    }
 }
 </script>
-   
