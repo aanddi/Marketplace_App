@@ -11,7 +11,6 @@ export default {
    name: 'OrdersView',
    date() {
       return {
-
       }
    }
 }
