@@ -6,8 +6,10 @@
                <v-toolbar dark color="primary" class="pl-4"> Login </v-toolbar>
                <v-card-text>
                   <v-form>
-                     <v-text-field prepend-icon="mdi-account" name="email" label="Email" type="email"></v-text-field>
-                     <v-text-field prepend-icon="mdi-lock" name="password" label="Password" type="password"></v-text-field>
+                     <v-text-field prepend-icon="mdi-account" name="email" label="Email" type="email"
+                        v-model="email"></v-text-field>
+                     <v-text-field prepend-icon="mdi-lock" name="password" label="Password" type="password"
+                        v-model="password"></v-text-field>
                   </v-form>
                </v-card-text>
                <v-card-actions>
@@ -25,7 +27,8 @@ export default {
    name: 'LoginView',
    date() {
       return {
-
+         email: "",
+         password: ""
       }
    }
 }
