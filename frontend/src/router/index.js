@@ -7,7 +7,9 @@ import LoginView from '../views/Auth/LoginView.vue'
 import RegistrationView from '../views/Auth/RegistrationView.vue'
 import OrdersView from '../views/User/OrdersView.vue'
 
+
 const routes = [
+
   {
     path: '/',
     name: 'home',
@@ -20,6 +22,7 @@ const routes = [
   },
   {
     path: '/ad/:id',
+    props: true,
     name: 'ad',
     component: AdView
   },

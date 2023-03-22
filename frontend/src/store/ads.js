@@ -35,6 +35,7 @@ export default {
 	mutations: {},
 	actions: {},
      getters: {
+
 		ads(state) {
 			return state.ads
 		},
@@ -44,7 +45,13 @@ export default {
 			})
 		},
 		myAds(state) {
-			return state.ads
-	     }
+		return state.ads
+	},
+
+          adById(state) {
+               return id => {
+               return state.ads.find(ad => ad.id == id)
+               }
+          }
      }  
 }

@@ -5,7 +5,4 @@ export default createStore({
   modules: {
     ads
   },
- 
-
-
 });
