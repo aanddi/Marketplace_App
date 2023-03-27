@@ -41,7 +41,7 @@
 <script>
 export default {
    name: 'NewAdView',
-    data() {
+   data() {
         return {
             valid: false,
             title: "",
