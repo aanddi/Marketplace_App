@@ -58,7 +58,7 @@ export default {
                     promo: this.promo,
                     src: "https://cdn.vuetifyjs.com/images/cards/cooking.png"
                 };
-                console.log(ad);
+                this.$store.dispatch("createAd", ad)
             }
         },
     },
