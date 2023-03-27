@@ -41,26 +41,27 @@
 <script>
 export default {
    name: 'NewAdView',
-   data() {
-      return {
-         valid: false,
-         title: "",
-         description: "",
-         promo: false,
-      };
-   },
-   methods: {
-      createAd() {
-         if (this.$refs.form.validate()) {
-            const ad = {
-               title: this.title,
-               desc: this.description,
-               promo: this.promo,
-            };
-            console.log(ad);
-         }
-      },
-   },
+    data() {
+        return {
+            valid: false,
+            title: "",
+            description: "",
+            promo: false,
+        };
+    },
+    methods: {
+        createAd() {
+            if (this.$refs.form.validate()) {
+                const ad = {
+                    title: this.title,
+                    desc: this.description,
+                    promo: this.promo,
+                    src: "https://cdn.vuetifyjs.com/images/cards/cooking.png"
+                };
+                console.log(ad);
+            }
+        },
+    },
 };
 </script>
  
