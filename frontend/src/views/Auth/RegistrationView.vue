@@ -29,36 +29,41 @@
 <script>
 
 export default {
-   data() {
-      return {
-         email: "",
-         password: "",
-         confirmPassword: "",
-         valid: false,
-         emailRules: [
-            v => !!v || 'E-mail is required',
-            v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
-         ],
-         passwordRules: [
-            v => !!v || 'Name is required',
-            v => (v && v.length >= 6) || 'Password must be more or equel than 6 characters',
-         ],
-         confirmPasswordRules: [
-            v => !!v || 'Password is required',
-            v => v === this.password || 'Password should match'
-         ]
-      }
-   },
-   methods: {
-    onSubmit(){
-      if (this.$refs.form.validate()) {
-        const user = {
-          email: this.email,
-          password: this.password
+    data() {
+        return {
+            email: "",
+            password: "",
+            confirmPassword: "",
+            valid: false,
+            emailRules: [
+                v => !!v || 'E-mail is required',
+                v => /.+@.+\..+/.test(v) || 'E-mail must be valid'
+            ],
+            passwordRules: [
+                v => !!v || 'Password is required',
+                v => (v && v.length >= 6) || 'Password must be more or equel than 6 characters'
+            ],
+            confirmPasswordRules: [
+                v => !!v || 'Password is required',
+                v => v === this.password || 'Password should match'
+            ]
         }
-        this.$store.dispatch('registerUser', user)
-      }
+    },
+    computed: {
+        loading() {
+            return this.$store.getters.loading
+        }
+    },
+    methods: {
+        onSubmit() {
+            if (this.$refs.form.validate()) {
+                const user = {
+                    email: this.email,
+                    password: this.password
+                }
+                this.$store.dispatch('registerUser', user)
+            }
+        }
     }
-  }
 } 
 </script>
