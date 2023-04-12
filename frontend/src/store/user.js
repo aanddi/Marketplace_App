@@ -17,10 +17,18 @@ class User {
          }
      },
       actions: {
-         registerUser({commit}, {email, password}) {
-             //Здесь запрос на сервер для регистрации
-             commit('setUser', new User(1, email, password))
-         }
+        registerUser({commit},{email, password}){
+            commit('clearError')
+            commit('setLoading', true)
+            fb.auth().createUserWithEmailAndPassword(email,password).then(response => {
+                commit('setUser', new User(response.user.uid))
+                commit('setLoading', false)
+            }).catch( error => {
+                commit('setLoading', false)
+                commit('setError', error.message)
+        throw error
+            })
+        }        
      },
       getters: {
          user(state) {
