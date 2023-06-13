@@ -7,7 +7,7 @@
              <v-row justify="center">
                  <v-col cols="12">
                      <v-card-title>
-                         <h1 class="text--primary">Buy It</h1>
+                         <h1 class="text--primary">Do you wan't to buy it?</h1>
                      </v-card-title>
                  </v-col>
              </v-row>
@@ -15,7 +15,20 @@
              <v-row justify="center">
                  <v-col cols="12">
                      <v-card-text>
-                         Lorem ipsum.
+                         <v-text-field
+                             name="name"
+                             label="Your name"
+                             type="text"
+                             v-model="name"
+                         >
+                         </v-text-field>
+                         <v-text-field
+                             name="phone"
+                             label="Your phone"
+                             type="text"
+                             v-model="phone"
+                         >
+                         </v-text-field>
                      </v-card-text>
                  </v-col>
              </v-row>
@@ -24,8 +37,8 @@
                  <v-col cols="12">
                      <v-card-actions>
                          <v-spacer></v-spacer>
-                         <v-btn>Cancel</v-btn>
-                         <v-btn color="success">Buy It</v-btn>
+                         <v-btn>Close</v-btn>
+                         <v-btn color="success">Buy It!</v-btn>
                      </v-card-actions>
                  </v-col>
              </v-row>
@@ -38,7 +51,9 @@
      props: ['ad'],
      data() {
          return {
-             modal: false
+             modal: false,
+             name: '',
+             phone: ''
          }
      }
  }
